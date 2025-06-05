@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Phản hồi khách hàng</h2>
+
+    <label for="rating">Đánh giá (1–5 sao):</label>
+        <select name="rating" id="rating">
+            <option value="">--Chọn sao--</option>
+            <option value="1">*</option>
+            <option value="2">**</option>
+            <option value="3">***</option>
+            <option value="4">****</option>
+            <option value="5">*****</option>
+        </select>
+        <br><br>
+
+        <label for="feedback">Ý kiến phản hồi:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+        <br><br>
+
+        <label for="email">Email liên hệ:</label><br>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+        <br><br>
+
+        <input type="submit" value="Gửi phản hồi">
+</body>
+</html>
