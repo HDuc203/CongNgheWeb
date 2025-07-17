@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số & SĐT</title>
+    <link rel="stylesheet" href="../css/NangCao.css">
+    <style>
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Bai1">
+            <input type="text" id="so" placeholder="Nhập ký tự bất kỳ">
+            <button onclick="checkbutton()">Check số</button>
+            <p id="ketquaSo"></p>
+        </div>
+        
+        <div class="Bai2">
+            <input type="text" id="sdt" placeholder="Nhập SĐT">
+            <button onclick="checksdt()">Check SĐT</button>
+            <p id="ketquaSdt"></p>
+        </div>
+    </div>
+
+    <script>
+        function checkbutton() {
+            const so = document.getElementById('so').value.trim();
+            const ketqua = document.getElementById('ketquaSo');
+
+            if (so === "") {
+                ketqua.textContent = "Bạn chưa nhập!";
+                ketqua.className = "error";
+                return;
+            }
+
+            if (isNaN(so)) {
+                ketqua.textContent = " Đây không phải là số.";
+                ketqua.className = "error";
+            } else {
+                ketqua.textContent = " Đây là số.";
+                ketqua.className = "success";
+            }
+        }
+
+        function checksdt() {
+            const sdt = document.getElementById('sdt').value.trim();
+            const ketquaSdt = document.getElementById('ketquaSdt');
+            const regex = /^(0|\+84)(\d{9})$/;
+
+            if (sdt === "") {
+                ketquaSdt.textContent = "Bạn chưa nhập SĐT!";
+                ketquaSdt.className = "error";
+                return;
+            }
+
+            if (regex.test(sdt)) {
+                ketquaSdt.textContent = "Số điện thoại hợp lệ.";
+                ketquaSdt.className = "success";
+            } else {
+                ketquaSdt.textContent = "Số điện thoại không hợp lệ.";
+                ketquaSdt.className = "error";
+            }
+        }
+    </script>
+</body>
+</html>

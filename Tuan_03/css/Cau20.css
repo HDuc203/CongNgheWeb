@@ -1,0 +1,94 @@
+:root {
+  --main-color: #2c3e50;
+  --accent-color: #3498db;
+  --bg-color: #f4f6f8;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: #333;
+  padding: 40px;
+}
+
+.cv-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.left-column {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.left-column img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.job-title {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.section h3 {
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.info-item i {
+  color: var(--accent-color);
+  min-width: 20px;
+  margin-top: 4px;
+}
+
+.right-column {
+  padding: 10px;
+}
+
+.right-column .info-item {
+  align-items: flex-start;
+}
+
+.right-column strong {
+  color: var(--main-color);
+}
+
+/* Responsive: 1 cột khi nhỏ */
+@media (max-width: 768px) {
+  .cv-container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-column, .right-column {
+    text-align: left;
+  }
+}
